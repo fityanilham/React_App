@@ -17,29 +17,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar />
         <Switch>
-          <ProtectedRoute path="/" exact>
-            <Navbar />
-            <Home/>
-          </ProtectedRoute>
-          <Route path="/about">
-            <Navbar />
-            <About/>
-          </Route>
-          <Route path="/contact">
-            <Navbar />
-            <Contact/>
-          </Route>
-          <Route path="/DetailUser/:id">
-            <Navbar />
-            <Detailuser/>
-          </Route>
-          <Route path="/UserNotFound">
-            <Navbar />
-            <UserNotFound/>
-          </Route>
+          <ProtectedRoute path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/DetailUser/:id" component={Detailuser} />
+          <Route path="/UserNotFound" component={UserNotFound} />
           <Route path="/Login" component={Login} />
-          <Route path="/Register" component={Register} />
+          <Route path="/R egister" component={Register} />
         </Switch>
       </BrowserRouter>
     </div>

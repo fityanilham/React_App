@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({children}) => {
   return (
     <React.Fragment>
       <div className="container-fluid p-2">
@@ -35,6 +35,7 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
+      <div className="mt-5">{children}</div>
     </React.Fragment>
   )
 }

@@ -40,7 +40,7 @@ function App() {
             <UserNotFound/>
           </Route>
           <ProtectedLogin path="/Login" component={Login} />
-          <Route path="/Register" component={Register} />
+          <ProtectedLogin path="/Register" component={Register} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 const ProtectedLogin = ({ children, ...rest }) => {
-  const [auth, setAuth] = React.useState(false);
+  const [auth, setAuth] = React.useState(true);
   React.useMemo(() => {
     if (localStorage.getItem("token")) {
       setAuth(false);

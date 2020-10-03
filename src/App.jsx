@@ -19,20 +19,24 @@ function App() {
       <BrowserRouter>
         <Switch>
           <ProtectedRoute path="/" exact>
-            <Navbar />
-            <Home/>
+            <Navbar>
+              <Home/>
+            </Navbar>
           </ProtectedRoute>
           <Route path="/about">
-            <Navbar />
-            <About/>
+            <Navbar>
+              <About/>
+            </Navbar>
           </Route>
           <Route path="/contact">
-            <Navbar />
-            <Contact/>
+            <Navbar>
+              <Contact/>
+            </Navbar>
           </Route>
           <Route path="/DetailUser/:id">
-            <Navbar />
-            <Detailuser/>
+            <Navbar>
+              <Detailuser/>
+            </Navbar>
           </Route>
           <Route path="/UserNotFound">
             <Navbar />

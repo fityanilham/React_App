@@ -1,13 +1,19 @@
-import React from 'react'
-import { Redirect, Route } from 'react-router-dom';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
 
-const ProtectedRoute = ({ childern, ...rest }) => {
+const ProtectedRoute = ({ children, ...rest }) => {
   const [auth, setAuth] = React.useState(false);
+  React.useMemo(() => {
+    if (localStorage.getItem("token")) {
+      setAuth(true);
+    }
+  }, [auth]);
+
   return (
     <div>
-      <Route {...rest}>{auth ? childern : <Redirect to="/login"/>}</Route>
+      <Route {...rest}>{auth ? children : <Redirect to="/login" />}</Route>
     </div>
-  )
-}
+  );
+};
 
 export default ProtectedRoute;

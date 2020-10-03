@@ -7,9 +7,10 @@ import About from './Page/About'
 import Detailuser from './Page/Detailuser'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import UserNotFound from './Page/UserNotFound';
-import ProtectedRoute from './Component/ProtecteRoute';
+import ProtectedRoute from './Component/ProtectedRoute';
 import Login from './Page/Login';
 import Register from './Page/Register';
+import ProtectedLogin from './Component/ProtectedLogin';
 
 function App() {
   // const [kelas, setKelas] = React.useState();
@@ -33,16 +34,12 @@ function App() {
               <Contact/>
             </Navbar>
           </Route>
-          <Route path="/DetailUser/:id">
-            <Navbar>
-              <Detailuser/>
-            </Navbar>
-          </Route>
+          <Route path="/DetailUser/:id" component={Detailuser} />
           <Route path="/UserNotFound">
             <Navbar />
             <UserNotFound/>
           </Route>
-          <Route path="/Login" component={Login} />
+          <ProtectedLogin path="/Login" component={Login} />
           <Route path="/Register" component={Register} />
         </Switch>
       </BrowserRouter>

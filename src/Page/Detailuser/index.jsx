@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { config } from '../../config'
+import Navbar from '../Navbar';
 
 const Detailuser = (props) => {
   let {id} = useParams();
@@ -25,18 +26,19 @@ const Detailuser = (props) => {
 
   const nextHandle = () => {
     let nextId = parseInt(id, 10) +1;
-    props.history.push(`/Detailuser/${nextId}`)
+    props.history.push(`/Detailuser/${nextId}`);
     // console.log(nextId);
   };
 
   const prevHandle = () => {
-    let prevId = parseInt(id, 9) -1;
-    props.history.push(`/Detailuser/${prevId}`)
+    let prevId = parseInt(id, 10) -1;
+    props.history.push(`/Detailuser/${prevId}`);
     // console.log(prevId);
   };
 
   return (
     <React.Fragment>
+      <Navbar />
       <div className="container">
         <img className="rounded-circle" src={user.avatar} alt="" />
         <h2>
